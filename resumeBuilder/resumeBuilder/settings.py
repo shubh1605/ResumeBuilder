@@ -33,7 +33,6 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'django.contrib.admin',
-    'testing',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -115,7 +114,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
@@ -123,11 +121,3 @@ X_FRAME_OPTIONS = 'SAMEORIGIN'
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-WKHTMLTOPDF_CMD_OPTIONS = {
-'quiet': True,
-}
-
-if os.name != 'nt':
-    WKHTMLTOPDF_CMD = 'D:/Softwares/wkhtmltopdf/bin/wkhtmltopdf.exe'
-else:
-    WKHTMLTOPDF_DEBUG = True
