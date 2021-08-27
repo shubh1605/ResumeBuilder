@@ -17,7 +17,7 @@ def home(request):
 	return render(request, 'testing/home.html', {'temp':'testing\\files\\template1\\temp1.html'})
 
 def test(request):
-	return render(request, 'testing/files/template2/temp2.html', {'temp':'/testing/testing.html'})
+	return render(request, 'testing/files/template1/temp1.html', {'temp':'/testing/testing.html'})
 
 
 class GeneratePDF(View):
