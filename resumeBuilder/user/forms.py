@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
+from django.forms import widgets
 from django.forms.widgets import Widget
 from .models import Profile
 from django.db import transaction
@@ -8,10 +9,15 @@ from django.db import transaction
 jobChoices = (("Student", "Student"),("Doctor","Doctor"),("Engineer","Engineer"))
 
 class UserRegisterationForm(UserCreationForm):
-	phone_number = forms.CharField(required=True)
-	email = forms.EmailField(required=True)
-	job = forms.CharField(required=True,widget=forms.Select(choices=jobChoices))
-	
+	phone_number = forms.CharField(required=True, widget=forms.TextInput(attrs={'class': "form-control bg-white border-left-0 border-md", 'placeholder':"Phone number"}))
+	email = forms.EmailField(required=True, widget=forms.TextInput(attrs={'class': "form-control bg-white border-left-0 border-md", 'placeholder':"Email-Id"}))
+	job = forms.CharField(required=True,widget=forms.Select(choices=jobChoices, attrs={'class': "form-control bg-white border-left-0 border-md", 'placeholder':"Job"}))
+	username = forms.CharField(required=True, widget=forms.TextInput(attrs={'class': "form-control bg-white border-left-0 border-md",'placeholder':"Username"}))
+	first_name = forms.CharField(required=True, widget=forms.TextInput(attrs={'class': "form-control bg-white border-left-0 border-md", 'placeholder':"First Name"}))
+	last_name = forms.CharField(required=True, widget=forms.TextInput(attrs={'class': "form-control bg-white border-left-0 border-md", 'placeholder':"Last Name"}))
+	password1 = forms.CharField(required=True, widget = forms.PasswordInput(attrs={'class': "form-control bg-white border-left-0 border-md", 'placeholder':"Password"}))
+	password2 = forms.CharField(required=True, widget = forms.PasswordInput(attrs={'class': "form-control bg-white border-left-0 border-md", 'placeholder':"Confirm Password"}))
+
 	class Meta(UserCreationForm.Meta):
 		model = User
 		fields = ['username', 'first_name', 'last_name', 'email', 'phone_number', 'job',
