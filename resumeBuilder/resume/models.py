@@ -13,9 +13,10 @@ class BasicInformation(models.Model):
     email=models.EmailField()
     about = models.TextField(default="")
     contact = models.CharField(default="", max_length=15)
-    address = models.TextField(default="")
+    address = models.TextField(default="")  
     github = models.URLField(blank=True)
     linkedin = models.URLField(blank=True)
+    profession = models.CharField(max_length=200, default="")
 
     def ___str__(self):
         return self.resume
