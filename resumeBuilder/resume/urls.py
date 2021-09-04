@@ -5,5 +5,6 @@ from django.conf.urls.static import static
 from resume import views
 
 urlpatterns = [ 
-    path('testing/', views.testing, name="testing")   
+    path('testing/', views.testing, name="testing"), 
+    path('details/', views.forms, name="forms"),  
 ] 

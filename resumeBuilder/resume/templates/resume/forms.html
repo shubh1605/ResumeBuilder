@@ -1,0 +1,434 @@
+{% extends 'resume/base.html'%} {%load static%} {% block styles %}
+
+<link href="{% static 'resume/assets/css/form.css' %}" rel="stylesheet" />
+
+{% endblock styles %} {% block content%}
+
+<br />
+<br />
+<br />
+<br />
+
+<div
+  class="row justify-content-center"
+  style="margin-left: 0px; margin-right: 0px"
+>
+  <div
+    class="
+      col-md-12 col-11 col-sm-10 col-md-10 col-lg-6 col-xl-5
+      text-center
+      p-0
+      mt-3
+      mb-2
+    "
+  >
+    <h2 id="heading">Sign Up Your User Account</h2>
+    <p>Fill all form field to go to next step</p>
+    <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
+      <ul id="progressbar">
+        <li class="active" id="account">
+          <strong>Personal Information</strong>
+        </li>
+        <li id="personal"><strong>Education</strong></li>
+        <li id="payment"><strong>Experience</strong></li>
+        <li id="confirm"><strong>Skills</strong></li>
+        <li id="confirm"><strong>Finish</strong></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-7">
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="text-center p-0 mb-2 mx-5 px-5">
+          <div class="card px-0 pt-4 pb-0 mb-3">
+            <form id="msform">
+              <!-- progressbar -->
+              <!-- fieldsets -->
+              <fieldset>
+                <div class="form-card">
+                  <div class="row">
+                    <!-- <div class="col-7">
+                                            <h2 class="fs-title">Personal Information:</h2>
+                                        </div>
+                                        <div class="col-5">
+                                            <h2 class="steps">Step 1 - 4</h2>
+                                        </div>  -->
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label class="fieldlabels">First Name *</label>
+                      <input
+                        type="text"
+                        name="first_name"
+                        placeholder="First Name"
+                        required
+                      />
+                    </div>
+
+                    <div class="col-md-6">
+                      <label class="fieldlabels">Last Name *</label>
+                      <input
+                        type="text"
+                        name="last_name"
+                        placeholder="Last Name"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label class="fieldlabels">Email *</label>
+                      <input
+                        type="email"
+                        name="email"
+                        placeholder="Email"
+                        required
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <label class="fieldlabels">Contact *</label>
+                      <input
+                        type="text"
+                        name="contact"
+                        placeholder="Contact"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-12">
+                      <label class="fieldlabels">Address *</label>
+                      <input
+                        type="text"
+                        name="address"
+                        placeholder="Address"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-12">
+                      <label class="fieldlabels">Profession *</label>
+                      <input
+                        type="text"
+                        name="profession"
+                        placeholder="Profession"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label class="fieldlabels">GitHub Link </label>
+                      <input
+                        type="url"
+                        name="github"
+                        placeholder="Github Link"
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <label class="fieldlabels">LinkedIn</label>
+                      <input
+                        type="url"
+                        name="linkedin"
+                        placeholder="LinkedIn"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-12">
+                      <label class="fieldlabels">About *</label>
+                      <input type="text" name="about" placeholder="About you" />
+                    </div>
+                  </div>
+                </div>
+                <input
+                  type="button"
+                  name="next"
+                  class="next action-button"
+                  value="Next"
+                />
+              </fieldset>
+              <fieldset>
+                <div class="form-card">
+                  <div class="row">
+                    <!-- <div class="col-7">
+                                            <h2 class="fs-title">Education Information:</h2>
+                                        </div>
+                                        <div class="col-5">
+                                            <h2 class="steps">Step 2 - 4</h2>
+                         </div> -->
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label class="fieldlabels">Degree: *</label>
+                      <select name="degree"
+                      placeholder="Degree"
+                      required >
+
+                      <option value="Phd">Phd</option>
+                      <option value="Masters"> Mtech/MA/MSc/MCom/MBA </option>
+                      <option value="Bachelors">BE/Btech/BA/BSc/BCom</option>
+                      <option value="High School">12th</option>
+                      <option value="School">10th</option>
+                      </select>
+
+                    
+                    
+                    
+                    </div>
+                    <div class="col-md-6">
+                      <label class="fieldlabels">Stream: *</label>
+                      <input
+                        type="text"
+                        name="stream"
+                        placeholder="Stream"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label class="fieldlabels">Passing Year: *</label>
+                      <input
+                        type="number" min="1960" max="3000" step="1" value="2021"
+                        name="passing_year"
+                        placeholder="Passing Year"
+                        required
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <label class="fieldlabels">Result: *</label>
+                      <input
+                        type="text"
+                        name="result"
+                        placeholder="Result"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  
+
+
+                </div>
+                <input
+                  type="button"
+                  name="next"
+                  class="next action-button"
+                  value="Next"
+                />
+                <input
+                  type="button"
+                  name="previous"
+                  class="previous action-button-previous"
+                  value="Previous"
+                />
+              </fieldset>
+              <fieldset>
+                <div class="form-card">
+                  <div class="row">
+                    <!-- <div class="col-7">
+                                            <h2 class="fs-title">Education Information:</h2>
+                                        </div>
+                                        <div class="col-5">
+                                            <h2 class="steps">Step 2 - 4</h2>
+                                        </div> -->
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label class="fieldlabels">Job Title: *</label>
+                      <input
+                        type="text"
+                        name="job_title"
+                        placeholder="Job Title"
+                        required
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <label class="fieldlabels">Employer: *</label>
+                      <input
+                        type="text"
+                        name="employer"
+                        placeholder="Employer"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label class="fieldlabels">City: *</label>
+                      <input
+                        type="text"
+                        name="city"
+                        placeholder="City"
+                        required
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <label class="fieldlabels">State: *</label>
+                      <input
+                        type="text"
+                        name="state"
+                        placeholder="State"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label class="fieldlabels">Start Date: *</label>
+                      <input
+                        type="date"
+                        name="start_date"
+                        placeholder="Start Date"
+                        required
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <label class="fieldlabels">End Date: *</label>
+                      <input
+                        type="date"
+                        name="end_date"
+                        placeholder="End Date"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div class="row">
+                      <div class="col-md-12">
+                        <label class="fieldlabels">Description: *</label>
+                    <input
+                      type="text"
+                      name="description"
+                      placeholder="Description"
+                      required
+                    />
+                      </div>
+                  </div>
+                </div>
+                <input
+                  type="button"
+                  name="next"
+                  class="next action-button"
+                  value="Next"
+                />
+                <input
+                  type="button"
+                  name="previous"
+                  class="previous action-button-previous"
+                  value="Previous"
+                />
+              </fieldset>
+              <fieldset>
+                <div class="form-card">
+                  <!-- <div class="row">
+                    <div class="col-7">
+                      <h2 class="fs-title">Skills</h2>
+                    </div>
+                    <div class="col-5">
+                      <h2 class="steps">Step 4 - 4</h2>
+                    </div>
+                  </div> -->
+
+                  <div class="row">
+                      <div class="col-md-6">
+                        <label class="fieldlabels">Skills: </label>
+                        <input
+                          type="text"
+                          name="skill"
+                          placeholder="Skills"
+                        />
+                      </div>
+                      <div class="col-md-6">
+                        <label class="fieldlabels">Level: *</label>
+                        <br>
+                        <select name="degree"
+                        placeholder="Degree"
+                        required >
+  
+                        <option value="Beginner">Beginner</option>
+                        <option value="Intermediate"> Intermediate </option>
+                        <option value="Advance">Advance</option>
+                        
+                        </select>
+                      </div>
+                  </div>
+
+        
+                </div>
+                <input
+                  type="button"
+                  name="next"
+                  class="next action-button"
+                  value="Submit"
+                />
+                <input
+                  type="button"
+                  name="previous"
+                  class="previous action-button-previous"
+                  value="Previous"
+                />
+              </fieldset>
+
+              <fieldset>
+                <div class="form-card">
+                  <div class="row">
+                    <!-- <div class="col-7">
+                                            <h2 class="fs-title">Finish:</h2>
+                                        </div>
+                                        <div class="col-5">
+                                            <h2 class="steps">Step 4 - 4</h2>
+                                        </div> -->
+                  </div>
+                  <br /><br />
+                  <h2 class="purple-text text-center">
+                    <strong>SUCCESS !</strong>
+                  </h2>
+                  <br />
+                  <div class="row justify-content-center">
+                    <div class="col-3">
+                      <img
+                        src="https://i.imgur.com/GwStPmg.png"
+                        class="fit-image"
+                      />
+                    </div>
+                  </div>
+                  <br /><br />
+                  <div class="row justify-content-center">
+                    <div class="col-7 text-center">
+                      <h5 class="purple-text text-center">
+                        You Have Successfully Signed Up
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-5"></div>
+</div>
+
+{% endblock %} {% block js %}
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="{% static 'resume/assets/js/form.js' %}"></script>
+
+{% endblock js %}

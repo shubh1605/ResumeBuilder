@@ -38,10 +38,11 @@ class Experience(models.Model):
 class Education(models.Model):
     resume = models.ForeignKey(Resume, on_delete=models.CASCADE)
     DEGREE_CHOICES = (
-        ('Phd', 'Male'),
+        ('Phd', 'Phd'),
         ('Mtech/MA/MSc/MCom/MBA', 'Masters'),
-        ('BE/Btech/BA/BSc/BCom', 'Masters'),
-        ('12th', 'High School')
+        ('BE/Btech/BA/BSc/BCom', 'Bachlors'),
+        ('12th', 'High School'),
+        ('10th', 'School'),
     )
     degree = models.CharField(max_length=50, choices=DEGREE_CHOICES)
     stream = models.CharField(max_length=100)
