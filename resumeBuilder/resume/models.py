@@ -26,8 +26,6 @@ class Experience(models.Model):
     resume = models.ForeignKey(Resume, on_delete=models.CASCADE)
     job_title = models.CharField(max_length=100)
     employer = models.CharField(max_length=100)
-    city = models.CharField(max_length = 100)
-    state = models.CharField(max_length = 100)
     start_date = models.DateField()
     end_date = models.DateField()
     description = models.TextField()
@@ -45,9 +43,10 @@ class Education(models.Model):
         ('10th', 'School'),
     )
     degree = models.CharField(max_length=50, choices=DEGREE_CHOICES)
-    stream = models.CharField(max_length=100)
+    branch = models.CharField(max_length=100)
     passing_year = models.DateField()
     result = models.CharField(max_length=5)
+    university = models.CharField(max_length = 200,default="")
 
     def ___str__(self):
         return self.resume
