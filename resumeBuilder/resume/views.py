@@ -16,6 +16,10 @@ def testing(request):
 
 @login_required
 def forms(request):
+    if request.method == 'POST':
+        
+        return render(request,'resume/home.html')
+
     context = {
         'resume_template': 'resume_templates/template1.html'
     }

@@ -2,6 +2,8 @@
 
 <link href="{% static 'resume/assets/css/form.css' %}" rel="stylesheet" />
 
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 {% endblock styles %} {% block content%}
 
 <br />
@@ -44,16 +46,15 @@
       <div class="row justify-content-center">
         <div class="text-center p-0 mb-2 mx-5 px-5">
           <div class="card px-0 pt-4 pb-0 mb-3">
-            <form id="msform">
+            <form id="msform" action="{% url 'forms' %}" method="POST">
               <!-- progressbar -->
               <!-- fieldsets -->
-              <fieldset>
+              <fieldset id="f1">
                 <div class="form-card">
                   <div class="row">
                     <div class="col-md-6">
                       <label class="fieldlabels">First Name *</label>
                       <input
-                        
                         id="first_name"
                         type="text"
                         name="first_name"
@@ -65,8 +66,7 @@
                     <div class="col-md-6">
                       <label class="fieldlabels">Last Name *</label>
                       <input
-                      
-                        id ="last_name"
+                        id="last_name"
                         type="text"
                         name="last_name"
                         placeholder="Last Name"
@@ -79,7 +79,6 @@
                     <div class="col-md-6">
                       <label class="fieldlabels">Email *</label>
                       <input
-                      
                         id="email"
                         type="email"
                         name="email"
@@ -90,7 +89,6 @@
                     <div class="col-md-6">
                       <label class="fieldlabels">Contact *</label>
                       <input
-                      
                         id="contact"
                         type="text"
                         name="contact"
@@ -104,7 +102,6 @@
                     <div class="col-md-12">
                       <label class="fieldlabels">Address *</label>
                       <input
-                      
                         id="address"
                         type="text"
                         name="address"
@@ -118,7 +115,6 @@
                     <div class="col-md-12">
                       <label class="fieldlabels">Profession *</label>
                       <input
-                      
                         id="profession"
                         type="text"
                         name="profession"
@@ -132,7 +128,6 @@
                     <div class="col-md-6">
                       <label class="fieldlabels">GitHub Link </label>
                       <input
-                      
                         id="github"
                         type="url"
                         name="github"
@@ -142,7 +137,6 @@
                     <div class="col-md-6">
                       <label class="fieldlabels">LinkedIn</label>
                       <input
-                      
                         id="linkedin"
                         type="url"
                         name="linkedin"
@@ -154,43 +148,44 @@
                   <div class="row">
                     <div class="col-md-12">
                       <label class="fieldlabels">About *</label>
-                      <input type="text" id="about" name="about" placeholder="About you" />
+                      <input
+                        type="text"
+                        id="about"
+                        name="about"
+                        placeholder="About you"
+                      />
                     </div>
                   </div>
                 </div>
                 <input
-                
                   type="button"
                   name="next"
                   class="next action-button"
                   value="Next"
                 />
               </fieldset>
-              <fieldset>
-                <div class="form-card">
-                  
 
+              <fieldset id="f2">
+                <div class="form-card" id="edu-form">
                   <div class="row">
                     <div class="col-md-6">
                       <label class="fieldlabels">Degree: *</label>
-                      <select name="degree"
-                      placeholder="Degree"
-                      id="degree"
-                      
-                      required >
-
-                      <option value="Phd">Phd</option>
-                      <option value="Masters"> Mtech/MA/MSc/MCom/MBA </option>
-                      <option value="Bachelors">BE/Btech/BA/BSc/BCom</option>
-                      <option value="High School">12th</option>
-                      <option value="School">10th</option>
+                      <select
+                        name="degree"
+                        placeholder="Degree"
+                        id="degree"
+                        required
+                      >
+                        <option value="Phd">Phd</option>
+                        <option value="Masters">Mtech/MA/MSc/MCom/MBA</option>
+                        <option value="Bachelors">BE/Btech/BA/BSc/BCom</option>
+                        <option value="High School">12th</option>
+                        <option value="School">10th</option>
                       </select>
-                    
                     </div>
                     <div class="col-md-6">
                       <label class="fieldlabels">Branch: *</label>
                       <input
-                      
                         id="branch"
                         type="text"
                         name="branch"
@@ -200,73 +195,75 @@
                   </div>
 
                   <div class="row">
-                      <div class="col-md-6">
-                    <label class="fieldlabels">University Name: *</label>
+                    <div class="col-md-6">
+                      <label class="fieldlabels">University Name: *</label>
                       <input
-                      
                         id="university"
                         type="text"
                         name="university"
                         placeholder="Result"
                         required
                       />
-                      </div>
-                      <div class="col-md-6">
-                        <label class="fieldlabels">Passing Year: *</label>
-                        <input
-                        
-                          id="passing_year"
-                          type="number" min="1960" max="3000" step="1" value="2021"
-                          name="passing_year"
-                          placeholder="Passing Year"
-                          required
-                        />
-                      </div>
-                      
+                    </div>
+                    <div class="col-md-6">
+                      <label class="fieldlabels">Passing Year: *</label>
+                      <input
+                        id="passing_year"
+                        type="number"
+                        min="1960"
+                        max="3000"
+                        step="1"
+                        value="2021"
+                        name="passing_year"
+                        placeholder="Passing Year"
+                        required
+                      />
+                    </div>
                   </div>
 
                   <div class="row">
-                    
                     <div class="col-md-12">
-                        <label class="fieldlabels">Result: *</label>
-                        <input
-                        
-                          id="result"
-                          type="text"
-                          name="result"
-                          placeholder="Result"
-                          required
-                        />
-                      </div>
+                      <label class="fieldlabels">Result: *</label>
+                      <input
+                        class="classhks"
+                        id="result"
+                        type="text"
+                        name="result"
+                        placeholder="Result"
+                        required
+                      />
+                    </div>
                   </div>
 
-                  
-
-
+                  <hr />
                 </div>
+
                 <input
-                
                   type="button"
                   name="next"
                   class="next action-button"
                   value="Next"
                 />
                 <input
-                
                   type="button"
                   name="previous"
                   class="previous action-button-previous"
                   value="Previous"
                 />
-              </fieldset>
-              <fieldset>
-                <div class="form-card">
 
+                <input
+                  type="button"
+                  name="Add more"
+                  class="addMore"
+                  value="Add more"
+                />
+              </fieldset>
+              <fieldset id="f3">
+                <div class="form-card">
                   <div class="row">
                     <div class="col-md-6">
                       <label class="fieldlabels">Job Title: *</label>
                       <input
-                      
                         id="job_title"
                         type="text"
                         name="job_title"
@@ -277,7 +274,6 @@
                     <div class="col-md-6">
                       <label class="fieldlabels">Employer: *</label>
                       <input
-                      
                         id="employer"
                         type="text"
                         name="employer"
@@ -291,7 +287,6 @@
                     <div class="col-md-6">
                       <label class="fieldlabels">Start Date: *</label>
                       <input
-                      
                         id="start_date"
                         type="date"
                         name="start_date"
@@ -302,7 +297,6 @@
                     <div class="col-md-6">
                       <label class="fieldlabels">End Date: *</label>
                       <input
-                      
                         id="end_date"
                         type="date"
                         name="end_date"
@@ -313,69 +307,59 @@
                   </div>
 
                   <div class="row">
-                      <div class="col-md-12">
-                        <label class="fieldlabels">Description: *</label>
-                    <input
-                    
-                      id="experience_description"
-                      type="text"
-                      name="experience_description"
-                      placeholder="Description"
-                      required
-                    />
-                      </div>
+                    <div class="col-md-12">
+                      <label class="fieldlabels">Description: *</label>
+                      <input
+                        id="experience_description"
+                        type="text"
+                        name="experience_description"
+                        placeholder="Description"
+                        required
+                      />
+                    </div>
                   </div>
                 </div>
                 <input
-                
                   type="button"
                   name="next"
                   class="next action-button"
                   value="Next"
                 />
                 <input
-                
                   type="button"
                   name="previous"
                   class="previous action-button-previous"
                   value="Previous"
                 />
               </fieldset>
-              <fieldset>
+              <fieldset id="f4">
                 <div class="form-card">
-
                   <div class="row">
-                      <div class="col-md-6">
-                        <label class="fieldlabels">Skills: </label>
-                        <input
-                        
-                            id="skill_detail"
-                          type="text"
-                          name="skill"
-                          placeholder="Skills"
-                        />
-                      </div>
-                      <div class="col-md-6">
-                        <label class="fieldlabels">Level: *</label>
-                        <select 
-                        
+                    <div class="col-md-6">
+                      <label class="fieldlabels">Skills: </label>
+                      <input
+                        id="skill_detail"
+                        type="text"
+                        name="skill"
+                        placeholder="Skills"
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <label class="fieldlabels">Level: *</label>
+                      <select
                         name="degree"
                         placeholder="Degree"
                         id="skill_level"
-                        required >
-  
+                        required
+                      >
                         <option value="Beginner">Beginner</option>
-                        <option value="Intermediate"> Intermediate </option>
+                        <option value="Intermediate">Intermediate</option>
                         <option value="Advance">Advance</option>
-                        
-                        </select>
-                      </div>
+                      </select>
+                    </div>
                   </div>
-
-        
                 </div>
                 <input
-                
                   type="button"
                   name="next"
                   class="next action-button"
@@ -389,7 +373,7 @@
                 />
               </fieldset>
 
-              <fieldset>
+              <fieldset id="f5">
                 <div class="form-card">
                   <div class="row">
                     <!-- <div class="col-7">
@@ -428,11 +412,23 @@
       </div>
     </div>
   </div>
-  <div class="col-md-5 " style="align-content:center;">
-
-    <iframe src="{% url 'testing' %}" id="template1" name="template1" allowTransparency="true" scrolling="yes" frameborder="2px" height="150%" width="165%" style="-webkit-transform: scale(0.50 ); margin-left:-350px; margin-top: -200px;" >
+  <div class="col-md-5" style="align-content: center">
+    <iframe
+      src="{% url 'testing' %}"
+      id="template1"
+      name="template1"
+      allowTransparency="true"
+      scrolling="yes"
+      frameborder="2px"
+      height="150%"
+      width="165%"
+      style="
+        -webkit-transform: scale(0.5);
+        margin-left: -350px;
+        margin-top: -200px;
+      "
+    >
     </iframe>
-
   </div>
 </div>
 
@@ -440,30 +436,18 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="{% static 'resume/assets/js/form.js' %}"></script>
 
-
 <script>
-
-var iframe = document.getElementById('template1');
-var element_id="";
-$("body").bind("click keypress",function() {
-        
-        element_id = document.activeElement.id;
-        console.log(element_id);
-        var elmnt = document.getElementById(element_id);
-        elmnt.onkeyup = function(){
-        iframe.contentWindow.document.getElementById(element_id).innerHTML = elmnt.value;
-        // 
-        }     
-    });
-
-
-
-     
-
-
-
-
-
+  var iframe = document.getElementById("template1");
+  var element_id = "";
+  $("body").bind("click keypress", function () {
+    element_id = document.activeElement.id;
+    console.log(element_id);
+    var elmnt = document.getElementById(element_id);
+    elmnt.onkeyup = function () {
+      iframe.contentWindow.document.getElementById(element_id).innerHTML =
+        elmnt.value;
+    };
+  });
 </script>
 
 {% endblock js %}
