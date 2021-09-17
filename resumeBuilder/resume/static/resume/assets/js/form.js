@@ -3,8 +3,9 @@ $(document).ready(function () {
   var opacity;
   var current = 1;
   var steps = $("fieldset").length;
-  var educ = $("#edu-form").html();
-  var edu_count = 1;
+  var edu = $("#edu-form").html();
+  var job = $("#job-form").html();
+  var skill = $("#skill-form").html();
 
   setProgressBar(current);
 
@@ -15,7 +16,7 @@ $(document).ready(function () {
     current_fs_id = current_fs.attr("id");
 
     $("#" + current_fs_id + " input:required").each(function () {
-      if ($(this).val() === "") chk = 1;
+      if ($(this).val() === "") chk = 0;
     });
 
     if (chk == 1) {
@@ -91,18 +92,86 @@ $(document).ready(function () {
     $(".progress-bar").css("width", percent + "%");
   }
 
-  $(".submit").click(function () {
-    return false;
-  });
-  var list;
-  $(".addMore").click(function () {
+  function mapping(className) {
+    var returnList = $("." + className)
+      .map(function () {
+        return this.value;
+      })
+      .get();
+    return returnList;
+  }
+  const zip = (...arr) => {
+    const zipped = [];
+    arr.forEach((item, ind) => {
+      item.forEach((i, index) => {
+        if (!zipped[index]) {
+          zipped[index] = [];
+        }
+        if (!zipped[index][ind]) {
+          zipped[index][ind] = [];
+        }
+        zipped[index][ind] = i || "";
+      });
+    });
+    return zipped;
+  };
 
-    $("#edu-form").append(educ);
-
-    list = $(".classhks");
-    for (var i = 0; i < list.length; i++) {
-      console.log($(list[i]).val());
+  function getZip(...classNames) {
+    var arr = [];
+    for (let i = 0; i < classNames.length; i++) {
+      arr.push(mapping(classNames[i]));
     }
+    return zip(...arr);
+  }
+
+  $("#submitBtn").click(function () {
+    job = getZip(
+      "job-title",
+      "job-employer",
+      "job-start_date",
+      "job-end_date",
+      "job-description"
+    );
+
+    education = getZip(
+      "edu-degree",
+      "edu-branch",
+      "edu-university",
+      "edu-passing_year",
+      "edu-result"
+    );
+
+    skill = getZip("skill-title", "skill-level");
+    $.ajax({
+      type: "POST",
+      url: "",
+      data: {
+        csrfmiddlewaretoken: csrftoken,
+        education: JSON.stringify(education),
+        job: JSON.stringify(job),
+        skill: JSON.stringify(skill),
+      },
+      dataType: "json",
+      success: function (response) {
+      },
+    });
+  });
+ 
+
+  $(".edu-addMore").click(function () {
+    $("#edu-form").append(edu);
+
     $("#edu-form").load();
+  });
+
+  $(".job-addMore").click(function () {
+    $("#job-form").append(job);
+
+    $("#job-form").load();
+  });
+  $(".skill-addMore").click(function () {
+    $("#skill-form").append(skill);
+
+    $("#skill-form").load();
   });
 });

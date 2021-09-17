@@ -47,6 +47,7 @@
         <div class="text-center p-0 mb-2 mx-5 px-5">
           <div class="card px-0 pt-4 pb-0 mb-3">
             <form id="msform" action="{% url 'forms' %}" method="POST">
+              {% csrf_token %}
               <!-- progressbar -->
               <!-- fieldsets -->
               <fieldset id="f1">
@@ -171,6 +172,7 @@
                     <div class="col-md-6">
                       <label class="fieldlabels">Degree: *</label>
                       <select
+                        class="edu-degree"
                         name="degree"
                         placeholder="Degree"
                         id="degree"
@@ -186,6 +188,7 @@
                     <div class="col-md-6">
                       <label class="fieldlabels">Branch: *</label>
                       <input
+                        class="edu-branch"
                         id="branch"
                         type="text"
                         name="branch"
@@ -198,6 +201,7 @@
                     <div class="col-md-6">
                       <label class="fieldlabels">University Name: *</label>
                       <input
+                        class="edu-university"
                         id="university"
                         type="text"
                         name="university"
@@ -208,6 +212,7 @@
                     <div class="col-md-6">
                       <label class="fieldlabels">Passing Year: *</label>
                       <input
+                        class="edu-passing_year"
                         id="passing_year"
                         type="number"
                         min="1960"
@@ -225,7 +230,7 @@
                     <div class="col-md-12">
                       <label class="fieldlabels">Result: *</label>
                       <input
-                        class="classhks"
+                        class="edu-result"
                         id="result"
                         type="text"
                         name="result"
@@ -254,16 +259,17 @@
                 <input
                   type="button"
                   name="Add more"
-                  class="addMore"
+                  class="edu-addMore"
                   value="Add more"
                 />
               </fieldset>
               <fieldset id="f3">
-                <div class="form-card">
+                <div class="form-card" id="job-form">
                   <div class="row">
                     <div class="col-md-6">
                       <label class="fieldlabels">Job Title: *</label>
                       <input
+                        class="job-title"
                         id="job_title"
                         type="text"
                         name="job_title"
@@ -274,6 +280,7 @@
                     <div class="col-md-6">
                       <label class="fieldlabels">Employer: *</label>
                       <input
+                        class="job-employer"
                         id="employer"
                         type="text"
                         name="employer"
@@ -287,6 +294,7 @@
                     <div class="col-md-6">
                       <label class="fieldlabels">Start Date: *</label>
                       <input
+                        class="job-start_date"
                         id="start_date"
                         type="date"
                         name="start_date"
@@ -297,6 +305,7 @@
                     <div class="col-md-6">
                       <label class="fieldlabels">End Date: *</label>
                       <input
+                        class="job-end_date"
                         id="end_date"
                         type="date"
                         name="end_date"
@@ -310,6 +319,7 @@
                     <div class="col-md-12">
                       <label class="fieldlabels">Description: *</label>
                       <input
+                        class="job-description"
                         id="experience_description"
                         type="text"
                         name="experience_description"
@@ -318,6 +328,7 @@
                       />
                     </div>
                   </div>
+                  <hr />
                 </div>
                 <input
                   type="button"
@@ -331,13 +342,20 @@
                   class="previous action-button-previous"
                   value="Previous"
                 />
+                <input
+                  type="button"
+                  name="Add more"
+                  class="job-addMore"
+                  value="Add more"
+                />
               </fieldset>
               <fieldset id="f4">
-                <div class="form-card">
+                <div class="form-card" id="skill-form">
                   <div class="row">
                     <div class="col-md-6">
                       <label class="fieldlabels">Skills: </label>
                       <input
+                        class="skill-title"
                         id="skill_detail"
                         type="text"
                         name="skill"
@@ -347,8 +365,9 @@
                     <div class="col-md-6">
                       <label class="fieldlabels">Level: *</label>
                       <select
-                        name="degree"
-                        placeholder="Degree"
+                        class="skill-level"
+                        name="skill-level"
+                        placeholder="skill-level"
                         id="skill_level"
                         required
                       >
@@ -358,8 +377,10 @@
                       </select>
                     </div>
                   </div>
+                  <hr />
                 </div>
                 <input
+                  id="submitBtn"
                   type="button"
                   name="next"
                   class="next action-button"
@@ -371,17 +392,17 @@
                   class="previous action-button-previous"
                   value="Previous"
                 />
+                <input
+                  type="button"
+                  name="Add more"
+                  class="skill-addMore"
+                  value="Add more"
+                />
               </fieldset>
 
               <fieldset id="f5">
                 <div class="form-card">
                   <div class="row">
-                    <!-- <div class="col-7">
-                                            <h2 class="fs-title">Finish:</h2>
-                                        </div>
-                                        <div class="col-5">
-                                            <h2 class="steps">Step 4 - 4</h2>
-                                        </div> -->
                   </div>
                   <br /><br />
                   <h2 class="purple-text text-center">
@@ -441,7 +462,6 @@
   var element_id = "";
   $("body").bind("click keypress", function () {
     element_id = document.activeElement.id;
-    console.log(element_id);
     var elmnt = document.getElementById(element_id);
     elmnt.onkeyup = function () {
       iframe.contentWindow.document.getElementById(element_id).innerHTML =
