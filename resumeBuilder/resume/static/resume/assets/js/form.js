@@ -7,6 +7,8 @@ $(document).ready(function () {
   var job = $("#job-form").html();
   var skill = $("#skill-form").html();
 
+ 
+
   setProgressBar(current);
 
   $(".next").click(function () {
@@ -141,7 +143,11 @@ $(document).ready(function () {
       "edu-result"
     );
 
+
     skill = getZip("skill-title", "skill-level");
+
+    info = getZip('info');
+
     $.ajax({
       type: "POST",
       url: "",
@@ -150,6 +156,8 @@ $(document).ready(function () {
         education: JSON.stringify(education),
         job: JSON.stringify(job),
         skill: JSON.stringify(skill),
+        info: JSON.stringify(info),
+        
       },
       dataType: "json",
       success: function (response) {
@@ -160,18 +168,33 @@ $(document).ready(function () {
 
   $(".edu-addMore").click(function () {
     $("#edu-form").append(edu);
-
     $("#edu-form").load();
+
+
   });
 
   $(".job-addMore").click(function () {
     $("#job-form").append(job);
-
     $("#job-form").load();
   });
-  $(".skill-addMore").click(function () {
-    $("#skill-form").append(skill);
 
+  var skill_count = 0;
+  $(".skill-addMore").click(function () {
+    console.log("here");
+    skill_count++;
+
+    $("#skill-form").append(skill);
+    
+    console.log(new_skill);      
+    
+    $("#template1").contents().find("#yui-u").append(new_skill);
+    
+    $("#template1").contents().find("#skill_detail").attr('id','skill_detail-'+String(skill_count));
+    $("#template1").contents().find("#skill_level").attr('id','skill_level-'+String(skill_count));
     $("#skill-form").load();
+
+
   });
+
+
 });
