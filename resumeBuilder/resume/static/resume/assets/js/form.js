@@ -6,7 +6,9 @@ $(document).ready(function () {
   var edu = $("#edu-form").html();
   var job = $("#job-form").html();
   var skill = $("#skill-form").html();
-  
+  var skill_count = 1;
+  var job_count = 1;
+  var education_count = 1;
 
   setProgressBar(current);
 
@@ -161,63 +163,88 @@ $(document).ready(function () {
     });
   });
 
+  
+
+  
+
+  function changeForm(idName, count) {
+    $("#" + idName + "-1").attr("id", idName + "-0");
+    $("#" + idName + "-1").attr("id", idName + "-" + String(count));
+    $("#" + idName + "-0").attr("id", idName + "-1");
+  }
+
+  function changePreview(idName, count, templateId) {
+    $("#" + templateId)
+      .contents()
+      .find("#"+ idName +"-1")
+      .attr("id", idName+"-0");
+
+    $("#" + templateId)
+      .contents()
+      .find("#"+idName+"-1")
+      .attr("id", idName+"-" + String(count));
+
+    $("#" + templateId)
+      .contents()
+      .find("#"+idName+"-0")
+      .attr("id", idName+"-1");
+  }
+
+
   $(".edu-addMore").click(function () {
+    education_count++;
     $("#edu-form").append(edu);
+    changeForm("degree",education_count); 
+    changeForm("branch",education_count); 
+    changeForm("university",education_count); 
+    changeForm("passing_year",education_count); 
+    changeForm("result",education_count); 
+
+    var new_edu = $("#template1").contents().find("#addneweducation").html();
+    $("#template1").contents().find("#yui-u-2").append(new_edu);
+
+    changePreview("degree",education_count,"template1"); 
+    changePreview("branch",education_count,"template1"); 
+    changePreview("university",education_count,"template1"); 
+    changePreview("passing_year",education_count,"template1"); 
+    changePreview("result",education_count,"template1"); 
     $("#edu-form").load();
   });
 
   $(".job-addMore").click(function () {
+    job_count++;
     $("#job-form").append(job);
+    changeForm("job_title",job_count);
+    changeForm("employer",job_count);
+    changeForm("start_date",job_count);
+    changeForm("end_date",job_count);
+    changeForm("experience_description",job_count);
+
+
+    var new_job = $("#template1").contents().find("#addnewjob").html();
+    $("#template1").contents().find("#yui-u-1").append(new_job);
+    
+    
+    changePreview("job_title",job_count,"template1");
+    changePreview("employer",job_count,"template1");
+    changePreview("start_date",job_count,"template1");
+    changePreview("end_date",job_count,"template1");
+    changePreview("experience_description",job_count,"template1");
+
     $("#job-form").load();
   });
 
-  var skill_count = 1;
+
   $(".skill-addMore").click(function () {
     skill_count++;
     $("#skill-form").append(skill);
-    
+    changeForm("skill_detail", skill_count);
+    changeForm("skill_level", skill_count);
 
-    $("#skill_detail-1").attr("id", "skill_detail-0");
-    $("#skill_detail-1").attr("id", "skill_detail-"+String(skill_count));
-    $("#skill_detail-0").attr("id", "skill_detail-1");
-
-    $("#skill_level-1").attr("id", "skill_level-0");
-    $("#skill_level-1").attr("id", "skill_level-"+String(skill_count));
-    $("#skill_level-0").attr("id", "skill_level-1");
-    
-    // console.log(form_divs);
-
-    
-     var new_skill = $("#template1").contents().find("#addnewskill").html();    
+    var new_skill = $("#template1").contents().find("#addnewskill").html();
     $("#template1").contents().find("#yui-u").append(new_skill);
-    
-      $("#template1")
-        .contents()
-        .find("#skill_detail-1")
-        .attr("id", "skill_detail-0");
-      $("#template1")
-        .contents()
-        .find("#skill_level-1")
-        .attr("id", "skill_level-0");
-
-        $("#template1")
-        .contents()
-        .find("#skill_detail-1")
-        .attr("id", "skill_detail-"+ String(skill_count));
-      $("#template1")
-        .contents()
-        .find("#skill_level-1")
-        .attr("id", "skill_level-"+ String(skill_count));
-
-        $("#template1")
-        .contents()
-        .find("#skill_detail-0")
-        .attr("id", "skill_detail-1");
-      $("#template1")
-        .contents()
-        .find("#skill_level-0")
-        .attr("id", "skill_level-1");
-
-        $("#skill-form").load();
+    changePreview("skill_detail",skill_count,"template1");
+    changePreview("skill_level",skill_count,"template1");
+    $("#skill-form").load();
   });
 });
