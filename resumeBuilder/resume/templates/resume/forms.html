@@ -472,13 +472,27 @@
   var iframe = document.getElementById("template1");
   var element_id = "";
   $("body").bind("click keypress", function () {
+    var store = null;
     element_id = document.activeElement.id;
+    var store = $('#'+element_id+' :selected').text();
+    console.log(store);
+    if (store){
+      iframe.contentWindow.document.getElementById(element_id).innerHTML =
+        store;
+    }
+    
     var elmnt = document.getElementById(element_id);
     elmnt.onkeyup = function () {
       iframe.contentWindow.document.getElementById(element_id).innerHTML =
-        elmnt.value;
+        elmnt.value;      
     };
+
+    
+    
   });
+  // 
+  
+  
 </script>
 
 {% endblock js %}

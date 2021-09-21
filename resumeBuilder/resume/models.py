@@ -7,7 +7,7 @@ class Resume(models.Model):
     template = models.CharField(default="", max_length=50)
 
     def __str__(self):
-        return f'{self.user.username} - {self.template}'
+        return f'ID:{self.id} {self.user.username} - {self.template}'
     
 
 class BasicInformation(models.Model):
