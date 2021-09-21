@@ -6,8 +6,7 @@ $(document).ready(function () {
   var edu = $("#edu-form").html();
   var job = $("#job-form").html();
   var skill = $("#skill-form").html();
-
- 
+  
 
   setProgressBar(current);
 
@@ -143,10 +142,9 @@ $(document).ready(function () {
       "edu-result"
     );
 
-
     skill = getZip("skill-title", "skill-level");
 
-    info = getZip('info');
+    info = getZip("info");
 
     $.ajax({
       type: "POST",
@@ -157,20 +155,15 @@ $(document).ready(function () {
         job: JSON.stringify(job),
         skill: JSON.stringify(skill),
         info: JSON.stringify(info),
-        
       },
       dataType: "json",
-      success: function (response) {
-      },
+      success: function (response) {},
     });
   });
- 
 
   $(".edu-addMore").click(function () {
     $("#edu-form").append(edu);
     $("#edu-form").load();
-
-
   });
 
   $(".job-addMore").click(function () {
@@ -178,23 +171,53 @@ $(document).ready(function () {
     $("#job-form").load();
   });
 
-  var skill_count = 0;
+  var skill_count = 1;
   $(".skill-addMore").click(function () {
-    console.log("here");
     skill_count++;
-
     $("#skill-form").append(skill);
     
-    console.log(new_skill);      
+
+    $("#skill_detail-1").attr("id", "skill_detail-0");
+    $("#skill_detail-1").attr("id", "skill_detail-"+String(skill_count));
+    $("#skill_detail-0").attr("id", "skill_detail-1");
+
+    $("#skill_level-1").attr("id", "skill_level-0");
+    $("#skill_level-1").attr("id", "skill_level-"+String(skill_count));
+    $("#skill_level-0").attr("id", "skill_level-1");
     
+    // console.log(form_divs);
+
+    
+     var new_skill = $("#template1").contents().find("#addnewskill").html();    
     $("#template1").contents().find("#yui-u").append(new_skill);
     
-    $("#template1").contents().find("#skill_detail").attr('id','skill_detail-'+String(skill_count));
-    $("#template1").contents().find("#skill_level").attr('id','skill_level-'+String(skill_count));
-    $("#skill-form").load();
+      $("#template1")
+        .contents()
+        .find("#skill_detail-1")
+        .attr("id", "skill_detail-0");
+      $("#template1")
+        .contents()
+        .find("#skill_level-1")
+        .attr("id", "skill_level-0");
 
+        $("#template1")
+        .contents()
+        .find("#skill_detail-1")
+        .attr("id", "skill_detail-"+ String(skill_count));
+      $("#template1")
+        .contents()
+        .find("#skill_level-1")
+        .attr("id", "skill_level-"+ String(skill_count));
 
+        $("#template1")
+        .contents()
+        .find("#skill_detail-0")
+        .attr("id", "skill_detail-1");
+      $("#template1")
+        .contents()
+        .find("#skill_level-0")
+        .attr("id", "skill_level-1");
+
+        $("#skill-form").load();
   });
-
-
 });
