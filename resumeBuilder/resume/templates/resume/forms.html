@@ -176,82 +176,127 @@
               </fieldset>
 
               <fieldset id="f2">
-                <div class="form-card" id="edu-form">
-                  <div class="row">
-                    <div class="col-md-6">
-                      <label class="fieldlabels">Degree: *</label>
-                      <select
-                        class="edu-degree"
-                        name="degree"
-                        placeholder="Degree"
-                        id="degree-1"
-                        required
-                      >
-                        <option value="Phd">Phd</option>
-                        <option value="Masters">Mtech/MA/MSc/MCom/MBA</option>
-                        <option value="Bachlors">BE/Btech/BA/BSc/BCom</option>
-                        <option value="HSC">12th</option>
-                        <option value="SSC">10th</option>
-                      </select>
-                    </div>
-                    <div class="col-md-6">
-                      <label class="fieldlabels">Branch: *</label>
-                      <input
-                        class="edu-branch"
-                        id="branch-1"
-                        type="text"
-                        name="branch"
-                        placeholder="Branch"
-                      />
-                    </div>
-                  </div>
+                <section id="faq" class="faq">
+                  <div class="container">
+                    <div class="faq-list">
+                      <ul style="width: 600px;">
+                        <div class="form-card" id="edu-form">
+                          <li data-aos="fade-up">
+                            <i class="bx bx-help-circle icon-help"></i>
+                            <a
+                              data-toggle="collapse"
+                              class="collapse"
+                              id="edu-href-1"
+                              href="#edu-list-1"
+                              style = "color:#673AB7;"
+                              >Education 1
+                              <i class="bx bx-chevron-down icon-show"></i
+                              ><i class="bx bx-chevron-up icon-close"></i
+                            ></a>
+                            <div
+                              id="edu-list-1"
+                              class="collapse show"
+                              data-parent=".faq-list"
+                            >
+                            <br>
+                            <br>
+                              <div class="row">
+                                <div class="col-md-6">
+                                  <label class="fieldlabels">Degree: *</label>
+                                  <select
+                                    class="edu-degree"
+                                    name="degree"
+                                    placeholder="Degree"
+                                    id="degree-1"
+                                    required
+                                  >
+                                    <option value="Phd">Phd</option>
+                                    <option value="Masters">
+                                      Mtech/MA/MSc/MCom/MBA
+                                    </option>
+                                    <option value="Bachlors">
+                                      BE/Btech/BA/BSc/BCom
+                                    </option>
+                                    <option value="HSC">12th</option>
+                                    <option value="SSC">10th</option>
+                                  </select>
+                                </div>
+                                <div class="col-md-6">
+                                  <label class="fieldlabels">Branch: *</label>
+                                  <input
+                                    class="edu-branch"
+                                    id="branch-1"
+                                    type="text"
+                                    name="branch"
+                                    placeholder="Branch"
+                                  />
+                                </div>
+                              </div>
 
-                  <div class="row">
-                    <div class="col-md-6">
-                      <label class="fieldlabels">University Name: *</label>
-                      <input
-                        class="edu-university"
-                        id="university-1"
-                        type="text"
-                        name="university"
-                        placeholder="Result"
-                        required
-                      />
-                    </div>
-                    <div class="col-md-6">
-                      <label class="fieldlabels">Passing Year: *</label>
-                      <input
-                        class="edu-passing_year"
-                        id="passing_year-1"
-                        type="number"
-                        min="1960"
-                        max="3000"
-                        step="1"
-                        value="2021"
-                        name="passing_year"
-                        placeholder="Passing Year"
-                        required
-                      />
-                    </div>
-                  </div>
+                              <div class="row">
+                                <div class="col-md-6">
+                                  <label class="fieldlabels"
+                                    >University Name: *</label
+                                  >
+                                  <input
+                                    class="edu-university"
+                                    id="university-1"
+                                    type="text"
+                                    name="university"
+                                    placeholder="Result"
+                                    required
+                                  />
+                                </div>
+                                <div class="col-md-6">
+                                  <label class="fieldlabels"
+                                    >Passing Year: *</label
+                                  >
+                                  <input
+                                    class="edu-passing_year"
+                                    id="passing_year-1"
+                                    type="number"
+                                    min="1960"
+                                    max="3000"
+                                    step="1"
+                                    value="2021"
+                                    name="passing_year"
+                                    placeholder="Passing Year"
+                                    required
+                                  />
+                                </div>
+                              </div>
 
-                  <div class="row">
-                    <div class="col-md-12">
-                      <label class="fieldlabels">Result: *</label>
-                      <input
-                        class="edu-result"
-                        id="result-1"
-                        type="text"
-                        name="result"
-                        placeholder="Result"
-                        required
-                      />
+                              <div class="row">
+                                <div class="col-md-12">
+                                  <label class="fieldlabels">Result: *</label>
+                                  <input
+                                    class="edu-result"
+                                    id="result-1"
+                                    type="text"
+                                    name="result"
+                                    placeholder="Result"
+                                    required
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                        </div>
+                      </ul>
                     </div>
                   </div>
-                  <br>
-                  <hr>
-                  <br>
-                </div>
+                </section>
+                <!-- End F.A.Q Section -->
+
+                <br />
+                <br />
+
+                <input
+                  type="button"
+                  name="Add more"
+                  class="edu-addMore"
+                  value="Add more"
+                />
 
                 <input
                   type="button"
@@ -266,12 +311,7 @@
                   value="Previous"
                 />
 
-                <input
-                  type="button"
-                  name="Add more"
-                  class="edu-addMore"
-                  value="Add more"
-                />
+                
               </fieldset>
               <fieldset id="f3">
                 <div class="form-card" id="job-form">
@@ -444,7 +484,7 @@
       </div>
     </div>
   </div>
-  <div class="col-md-5" style="align-content: center">
+  <div class="col-md-5" style="height: 800px">
     <iframe
       src="{% url 'testing' %}"
       id="template1"
@@ -474,25 +514,20 @@
   $("body").bind("click keypress", function () {
     var store = null;
     element_id = document.activeElement.id;
-    var store = $('#'+element_id+' :selected').text();
+    var store = $("#" + element_id + " :selected").text();
     console.log(store);
-    if (store){
+    if (store) {
       iframe.contentWindow.document.getElementById(element_id).innerHTML =
         store;
     }
-    
+
     var elmnt = document.getElementById(element_id);
     elmnt.onkeyup = function () {
       iframe.contentWindow.document.getElementById(element_id).innerHTML =
-        elmnt.value;      
+        elmnt.value;
     };
-
-    
-    
   });
-  // 
-  
-  
+  //
 </script>
 
 {% endblock js %}

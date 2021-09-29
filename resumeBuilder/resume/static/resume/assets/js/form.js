@@ -173,6 +173,8 @@ $(document).ready(function () {
     $("#" + idName + "-0").attr("id", idName + "-1");
   }
 
+  
+
   function changePreview(idName, count, templateId) {
     $("#" + templateId)
       .contents()
@@ -199,6 +201,13 @@ $(document).ready(function () {
     changeForm("university",education_count); 
     changeForm("passing_year",education_count); 
     changeForm("result",education_count); 
+    changeForm("edu-list",education_count);
+    changeForm("edu-href", education_count);
+    $("#edu-href-"+String(education_count)).attr('href', "#edu-list-"+String(education_count));
+    var xyz = $("#degree-"+String(education_count-1)).val()
+    console.log(xyz);
+    $("#edu-href-"+String(education_count-1)).html(xyz+' <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i>');
+
 
     var new_edu = $("#template1").contents().find("#addneweducation").html();
     $("#template1").contents().find("#yui-u-2").append(new_edu);

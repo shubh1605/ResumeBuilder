@@ -1,222 +1,298 @@
 * {
-    margin: 0;
-    padding: 0
+  margin: 0;
+  padding: 0;
 }
 
 html {
-    height: 100%
+  height: 100%;
 }
 
 p {
-    color: grey
+  color: grey;
 }
 
 #heading {
-    text-transform: uppercase;
-    color: #673AB7;
-    font-weight: normal
+  text-transform: uppercase;
+  color: #673ab7;
+  font-weight: normal;
 }
 
 #msform {
-    text-align: center;
-    position: relative;
-    margin-top: 20px
+  text-align: center;
+  position: relative;
+  margin-top: 20px;
 }
 
 #msform fieldset {
-    background: white;
-    border: 0 none;
-    border-radius: 0.5rem;
-    box-sizing: border-box;
-    width: 100%;
-    margin: 0;
-    padding-bottom: 20px;
-    position: relative
+  background: white;
+  border: 0 none;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding-bottom: 20px;
+  position: relative;
 }
 
 .form-card {
-    text-align: left
+  text-align: left;
 }
 
 #msform fieldset:not(:first-of-type) {
-    display: none
+  display: none;
 }
 
 #msform input,
 #msform textarea {
-    padding: 8px 15px 8px 15px;
-    border: 1px solid #ccc;
-    border-radius: 0px;
-    margin-bottom: 25px;
-    margin-top: 2px;
-    width: 100%;
-    box-sizing: border-box;
-    font-family: montserrat;
-    color: #2C3E50;
-    background-color: #ECEFF1;
-    font-size: 16px;
-    letter-spacing: 1px
+  padding: 8px 15px 8px 15px;
+  border: 1px solid #ccc;
+  border-radius: 0px;
+  margin-bottom: 25px;
+  margin-top: 2px;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: montserrat;
+  color: #2c3e50;
+  background-color: #eceff1;
+  font-size: 16px;
+  letter-spacing: 1px;
 }
 
 #msform input:focus,
 #msform textarea:focus {
-    -moz-box-shadow: none !important;
-    -webkit-box-shadow: none !important;
-    box-shadow: none !important;
-    border: 1px solid #673AB7;
-    outline-width: 0
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  border: 1px solid #673ab7;
+  outline-width: 0;
 }
 
 #msform .action-button {
-    width: 100px;
-    background: #673AB7;
-    font-weight: bold;
-    color: white;
-    border: 0 none;
-    border-radius: 0px;
-    cursor: pointer;
-    padding: 10px 5px;
-    margin: 10px 0px 10px 5px;
-    float: right
+  width: 100px;
+  background: #673ab7;
+  font-weight: bold;
+  color: white;
+  border: 0 none;
+  border-radius: 0px;
+  cursor: pointer;
+  padding: 10px 5px;
+  margin: 10px 0px 10px 5px;
+  float: right;
 }
 
 #msform .action-button:hover,
 #msform .action-button:focus {
-    background-color: #311B92
+  background-color: #311b92;
 }
 
 #msform .action-button-previous {
-    width: 100px;
-    background: #616161;
-    font-weight: bold;
-    color: white;
-    border: 0 none;
-    border-radius: 0px;
-    cursor: pointer;
-    padding: 10px 5px;
-    margin: 10px 5px 10px 0px;
-    float: right
+  width: 100px;
+  background: #616161;
+  font-weight: bold;
+  color: white;
+  border: 0 none;
+  border-radius: 0px;
+  cursor: pointer;
+  padding: 10px 5px;
+  margin: 10px 5px 10px 0px;
+  float: right;
 }
 
 #msform .action-button-previous:hover,
 #msform .action-button-previous:focus {
-    background-color: #000000
+  background-color: #000000;
 }
 
 .card {
-    z-index: 0;
-    border: none;
-    position: relative
+  z-index: 0;
+  border: none;
+  position: relative;
 }
 
 .fs-title {
-    font-size: 25px;
-    color: #673AB7;
-    margin-bottom: 15px;
-    font-weight: normal;
-    text-align: left
+  font-size: 25px;
+  color: #673ab7;
+  margin-bottom: 15px;
+  font-weight: normal;
+  text-align: left;
 }
 
 .purple-text {
-    color: #673AB7;
-    font-weight: normal
+  color: #673ab7;
+  font-weight: normal;
 }
 
 .steps {
-    font-size: 25px;
-    color: gray;
-    margin-bottom: 10px;
-    font-weight: normal;
-    text-align: right
+  font-size: 25px;
+  color: gray;
+  margin-bottom: 10px;
+  font-weight: normal;
+  text-align: right;
 }
 
 .fieldlabels {
-    color: gray;
-    text-align: left
+  color: gray;
+  text-align: left;
 }
 
 #progressbar {
-    margin-bottom: 30px;
-    overflow: hidden;
-    color: lightgrey
+  margin-bottom: 30px;
+  overflow: hidden;
+  color: lightgrey;
 }
 
 #progressbar .active {
-    color: #673AB7
+  color: #673ab7;
 }
 
 #progressbar li {
-    list-style-type: none;
-    font-size: 15px;
-    width: 20%;
-    float: left;
-    position: relative;
-    font-weight: 400
+  list-style-type: none;
+  font-size: 15px;
+  width: 20%;
+  float: left;
+  position: relative;
+  font-weight: 400;
 }
 
 #progressbar #account:before {
-    font-family: FontAwesome;
-    content: "\f13e"
+  font-family: FontAwesome;
+  content: "\f13e";
 }
 
 #progressbar #personal:before {
-    font-family: FontAwesome;
-    content: "\f007"
+  font-family: FontAwesome;
+  content: "\f007";
 }
 
 #progressbar #payment:before {
-    font-family: FontAwesome;
-    content: "\f030"
+  font-family: FontAwesome;
+  content: "\f030";
 }
 
 #progressbar #confirm:before {
-    font-family: FontAwesome;
-    content: "\f00c"
+  font-family: FontAwesome;
+  content: "\f00c";
 }
 
 #progressbar li:before {
-    width: 50px;
-    height: 50px;
-    line-height: 45px;
-    display: block;
-    font-size: 20px;
-    color: #ffffff;
-    background: lightgray;
-    border-radius: 50%;
-    margin: 0 auto 10px auto;
-    padding: 2px
+  width: 50px;
+  height: 50px;
+  line-height: 45px;
+  display: block;
+  font-size: 20px;
+  color: #ffffff;
+  background: lightgray;
+  border-radius: 50%;
+  margin: 0 auto 10px auto;
+  padding: 2px;
 }
 
 #progressbar li:after {
-    content: '';
-    width: 100%;
-    height: 2px;
-    background: lightgray;
-    position: absolute;
-    left: 0;
-    top: 25px;
-    z-index: -1
+  content: "";
+  width: 100%;
+  height: 2px;
+  background: lightgray;
+  position: absolute;
+  left: 0;
+  top: 25px;
+  z-index: -1;
 }
 
 #progressbar li.active:before,
 #progressbar li.active:after {
-    background: #673AB7
+  background: #673ab7;
 }
 
 .progress {
-    height: 20px
+  height: 20px;
 }
 
 .progress-bar {
-    background-color: #673AB7
+  background-color: #673ab7;
 }
 
 .fit-image {
-    width: 100%;
-    object-fit: cover
+  width: 100%;
+  object-fit: cover;
 }
 
-.row{
-    margin-left: 0px;
-    margin-right: 0px;
+.row {
+  margin-left: 0px;
+  margin-right: 0px;
 }
+
+
+.faq .faq-list {
+    padding: 0;
+  }
+  
+  .faq .faq-list ul {
+    padding: 0;
+    list-style: none;
+  }
+  
+  .faq .faq-list li + li {
+    margin-top: 15px;
+  }
+  
+  .faq .faq-list li {
+    padding: 20px;
+    background:#f5f5ff;
+    border-radius: 4px;
+    position: relative;
+  }
+  
+  .faq .faq-list a {
+    display: block;
+    position: relative;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    padding: 0 30px;
+
+    outline: none;
+  }
+  
+  .faq .faq-list .icon-help {
+    font-size: 24px;
+    position: absolute;
+    right: 0;
+    left: 20px;
+    color: #673AB7;
+  }
+  
+  .faq .faq-list .icon-show, .faq .faq-list .icon-close {
+    font-size: 24px;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  
+  
+  
+  .faq .faq-list .icon-show {
+    display: none;
+  }
+  
+  .faq .faq-list a.collapsed {
+    color: #673AB7;
+  }
+  
+  .faq .faq-list a.collapsed:hover {
+    color: #673AB7;
+  }
+  
+  .faq .faq-list a.collapsed .icon-show {
+    display: inline-block;
+  }
+  
+  .faq .faq-list a.collapsed .icon-close {
+    display: none;
+  }
+  
+  @media (max-width: 1200px) {
+    .faq .faq-list {
+      padding: 0;
+    }
+  }
