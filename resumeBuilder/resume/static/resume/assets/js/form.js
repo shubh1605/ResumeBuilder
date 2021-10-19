@@ -192,10 +192,13 @@ $(document).ready(function () {
       .attr("id", idName+"-1");
   }
 
+  
 
   $(".edu-addMore").click(function () {
     education_count++;
     $("#edu-form").append(edu);
+    changeForm("education", education_count);
+    changeForm("edu-del", education_count);
     changeForm("degree",education_count); 
     changeForm("branch",education_count); 
     changeForm("university",education_count); 
@@ -203,11 +206,11 @@ $(document).ready(function () {
     changeForm("result",education_count); 
     changeForm("edu-list",education_count);
     changeForm("edu-href", education_count);
+    
     $("#edu-href-"+String(education_count)).attr('href', "#edu-list-"+String(education_count));
-    var xyz = $("#degree-"+String(education_count-1)).val()
-    console.log(xyz);
-    $("#edu-href-"+String(education_count-1)).html(xyz+' <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i>');
-
+    var xyz = $("#degree-"+String(education_count-1)).val();
+    // $("#edu-href-"+String(education_count-1)).html(xyz+' <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i>');
+    $("#edu-href-"+String(education_count)).html(xyz+' <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i><div onclick="myFunctionElt(this);" id="edu-del-'+education_count+'">delete</div>');
 
     var new_edu = $("#template1").contents().find("#addneweducation").html();
     $("#template1").contents().find("#yui-u-2").append(new_edu);
@@ -217,6 +220,7 @@ $(document).ready(function () {
     changePreview("university",education_count,"template1"); 
     changePreview("passing_year",education_count,"template1"); 
     changePreview("result",education_count,"template1"); 
+    changePreview("education",education_count,"template1"); 
     $("#edu-form").load();
   });
 

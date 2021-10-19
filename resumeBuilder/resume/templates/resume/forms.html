@@ -179,27 +179,36 @@
                 <section id="faq" class="faq">
                   <div class="container">
                     <div class="faq-list">
-                      <ul style="width: 600px;">
+                      <ul style="width: 600px">
                         <div class="form-card" id="edu-form">
-                          <li data-aos="fade-up">
-                            <i class="bx bx-help-circle icon-help"></i>
+                          <li data-aos="fade-up" id="education-1">
+
                             <a
                               data-toggle="collapse"
                               class="collapse"
                               id="edu-href-1"
                               href="#edu-list-1"
-                              style = "color:#673AB7;"
+                              style="color: #673ab7"
                               >Education 1
+
                               <i class="bx bx-chevron-down icon-show"></i
                               ><i class="bx bx-chevron-up icon-close"></i
                             ></a>
+
+                            <!-- <div
+                              id="edu-del-1"
+                              class="deleteElem"
+                              
+                            >DELELTE</div> -->
+                            <!-- <div onclick="myFunctionElt(this);" id="edu-del-1">delete</div> -->
+
                             <div
                               id="edu-list-1"
                               class="collapse show"
                               data-parent=".faq-list"
                             >
-                            <br>
-                            <br>
+                              <br />
+                              <br />
                               <div class="row">
                                 <div class="col-md-6">
                                   <label class="fieldlabels">Degree: *</label>
@@ -281,6 +290,8 @@
                               </div>
                             </div>
                           </li>
+                          
+                          <!-- <a class='deleteElem' id="edu-del-1"><i class="bx bx-help-circle icon-help" ></i></a> -->
                         </div>
                       </ul>
                     </div>
@@ -310,8 +321,6 @@
                   class="previous action-button-previous"
                   value="Previous"
                 />
-
-                
               </fieldset>
               <fieldset id="f3">
                 <div class="form-card" id="job-form">
@@ -528,6 +537,15 @@
     };
   });
   //
+
+  function myFunctionElt (elt) {
+    id = elt.id.split('-').at(-1);
+    $("#education-"+id).remove();   
+    $("#template1").contents().find("#education-"+id).remove();  
+    
+ }
+
+
 </script>
 
 {% endblock js %}
