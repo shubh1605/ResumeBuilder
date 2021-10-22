@@ -29,7 +29,10 @@ $(document).ready(function () {
         text: "Fill all the fields",
       });
     } else {
+      console.log($(this).parent());
       next_fs = $(this).parent().next();
+      console.log(next_fs);
+      
 
       //Add Class Active
       $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
@@ -208,9 +211,8 @@ $(document).ready(function () {
     changeForm("edu-href", education_count);
     
     $("#edu-href-"+String(education_count)).attr('href', "#edu-list-"+String(education_count));
-    var xyz = $("#degree-"+String(education_count-1)).val();
-    // $("#edu-href-"+String(education_count-1)).html(xyz+' <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i>');
-    $("#edu-href-"+String(education_count)).html(xyz+' <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i><div onclick="myFunctionElt(this);" id="edu-del-'+education_count+'">delete</div>');
+    var xyz = 'Education ' + education_count;
+    $("#edu-href-"+String(education_count)).html(xyz + '<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i><div onclick="delete_education(this);" id="edu-del-'+education_count+'">delete</div>');
 
     var new_edu = $("#template1").contents().find("#addneweducation").html();
     $("#template1").contents().find("#yui-u-2").append(new_edu);
@@ -228,13 +230,22 @@ $(document).ready(function () {
     job_count++;
     $("#job-form").append(job);
     changeForm("job_title",job_count);
+    changeForm("job",job_count);
     changeForm("employer",job_count);
     changeForm("start_date",job_count);
     changeForm("end_date",job_count);
     changeForm("experience_description",job_count);
+    changeForm("job-list",job_count);
+    changeForm("job-href", job_count);
+
+    $("#job-href-"+String(job_count)).attr('href', "#job-list-"+String(job_count));
+    xyz = 'Job ' + job_count;
+    $("#job-href-"+String(job_count)).html(xyz + ' <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i><div onclick="delete_job(this);" id="job-del-'+job_count+'">delete</div>');
+
 
 
     var new_job = $("#template1").contents().find("#addnewjob").html();
+    
     $("#template1").contents().find("#yui-u-1").append(new_job);
     
     
@@ -243,6 +254,7 @@ $(document).ready(function () {
     changePreview("start_date",job_count,"template1");
     changePreview("end_date",job_count,"template1");
     changePreview("experience_description",job_count,"template1");
+    changePreview("job",job_count,"template1");
 
     $("#job-form").load();
   });
@@ -253,11 +265,20 @@ $(document).ready(function () {
     $("#skill-form").append(skill);
     changeForm("skill_detail", skill_count);
     changeForm("skill_level", skill_count);
+    changeForm("skill", skill_count);
+    changeForm("skill-list",skill_count);
+    changeForm("skill-href", skill_count);
+
+    $("#skill-href-"+String(skill_count)).attr('href', "#skill-list-"+String(skill_count));
+    xyz = 'Skill ' + skill_count;
+    $("#skill-href-"+String(skill_count)).html(xyz + ' <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i><div onclick="delete_skill(this);" id="skill-del-'+skill_count+'">delete</div>');
 
     var new_skill = $("#template1").contents().find("#addnewskill").html();
     $("#template1").contents().find("#yui-u").append(new_skill);
+
     changePreview("skill_detail",skill_count,"template1");
     changePreview("skill_level",skill_count,"template1");
+    changePreview("skill",skill_count,"template1");
     $("#skill-form").load();
   });
 });

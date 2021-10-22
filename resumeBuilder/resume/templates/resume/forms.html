@@ -61,6 +61,7 @@
                         type="text"
                         name="first_name"
                         placeholder="First Name"
+                        value="{{user.first_name}}"
                         required
                       />
                     </div>
@@ -73,6 +74,7 @@
                         type="text"
                         name="last_name"
                         placeholder="Last Name"
+                        value="{{user.last_name}}"
                         required
                       />
                     </div>
@@ -182,7 +184,6 @@
                       <ul style="width: 600px">
                         <div class="form-card" id="edu-form">
                           <li data-aos="fade-up" id="education-1">
-
                             <a
                               data-toggle="collapse"
                               class="collapse"
@@ -194,13 +195,6 @@
                               <i class="bx bx-chevron-down icon-show"></i
                               ><i class="bx bx-chevron-up icon-close"></i
                             ></a>
-
-                            <!-- <div
-                              id="edu-del-1"
-                              class="deleteElem"
-                              
-                            >DELELTE</div> -->
-                            <!-- <div onclick="myFunctionElt(this);" id="edu-del-1">delete</div> -->
 
                             <div
                               id="edu-list-1"
@@ -290,7 +284,7 @@
                               </div>
                             </div>
                           </li>
-                          
+
                           <!-- <a class='deleteElem' id="edu-del-1"><i class="bx bx-help-circle icon-help" ></i></a> -->
                         </div>
                       </ul>
@@ -299,7 +293,6 @@
                 </section>
                 <!-- End F.A.Q Section -->
 
-                <br />
                 <br />
 
                 <input
@@ -323,72 +316,107 @@
                 />
               </fieldset>
               <fieldset id="f3">
-                <div class="form-card" id="job-form">
-                  <div class="row">
-                    <div class="col-md-6">
-                      <label class="fieldlabels">Job Title: *</label>
-                      <input
-                        class="job-title"
-                        id="job_title-1"
-                        type="text"
-                        name="job_title"
-                        placeholder="Job Title"
-                        required
-                      />
-                    </div>
-                    <div class="col-md-6">
-                      <label class="fieldlabels">Employer: *</label>
-                      <input
-                        class="job-employer"
-                        id="employer-1"
-                        type="text"
-                        name="employer"
-                        placeholder="Employer"
-                        required
-                      />
-                    </div>
-                  </div>
+                <section id="faq" class="faq">
+                  <div class="container">
+                    <div class="faq-list">
+                      <ul style="width: 600px">
+                        <div class="form-card" id="job-form">
+                          <li data-aos="fade-up" id="job-1">
+                            <a
+                              data-toggle="collapse"
+                              class="collapse"
+                              id="job-href-1"
+                              href="#job-list-1"
+                              style="color: #673ab7"
+                              >Job 1
 
-                  <div class="row">
-                    <div class="col-md-6">
-                      <label class="fieldlabels">Start Date: *</label>
-                      <input
-                        class="job-start_date"
-                        id="start_date-1"
-                        type="date"
-                        name="start_date"
-                        placeholder="Start Date"
-                        required
-                      />
-                    </div>
-                    <div class="col-md-6">
-                      <label class="fieldlabels">End Date: *</label>
-                      <input
-                        class="job-end_date"
-                        id="end_date-1"
-                        type="date"
-                        name="end_date"
-                        placeholder="End Date"
-                        required
-                      />
-                    </div>
-                  </div>
+                              <i class="bx bx-chevron-down icon-show"></i
+                              ><i class="bx bx-chevron-up icon-close"></i
+                            ></a>
 
-                  <div class="row">
-                    <div class="col-md-12">
-                      <label class="fieldlabels">Description: *</label>
-                      <input
-                        class="job-description"
-                        id="experience_description-1"
-                        type="text"
-                        name="experience_description"
-                        placeholder="Description"
-                        required
-                      />
+                            <div
+                              id="job-list-1"
+                              class="collapse show"
+                              data-parent=".faq-list"
+                            >
+                              <br />
+                              <br />
+                              <div class="row">
+                                <div class="col-md-6">
+                                  <label class="fieldlabels"
+                                    >Job Title: *</label
+                                  >
+                                  <input
+                                    class="job-title"
+                                    id="job_title-1"
+                                    type="text"
+                                    name="job_title"
+                                    placeholder="Job Title"
+                                    required
+                                  />
+                                </div>
+                                <div class="col-md-6">
+                                  <label class="fieldlabels">Employer: *</label>
+                                  <input
+                                    class="job-employer"
+                                    id="employer-1"
+                                    type="text"
+                                    name="employer"
+                                    placeholder="Employer"
+                                    required
+                                  />
+                                </div>
+                              </div>
+
+                              <div class="row">
+                                <div class="col-md-6">
+                                  <label class="fieldlabels"
+                                    >Start Date: *</label
+                                  >
+                                  <input
+                                    class="job-start_date"
+                                    id="start_date-1"
+                                    type="month"
+                                    name="start_date"
+                                    placeholder="Start Date"
+                                    required
+                                  />
+                                </div>
+                                <div class="col-md-6">
+                                  <label class="fieldlabels">End Date: *</label>
+                                  <input
+                                    class="job-end_date"
+                                    id="end_date-1"
+                                    type="month"
+                                    name="end_date"
+                                    placeholder="End Date"
+                                    required
+                                  />
+                                </div>
+                              </div>
+
+                              <div class="row">
+                                <div class="col-md-12">
+                                  <label class="fieldlabels"
+                                    >Description: *</label
+                                  >
+                                  <input
+                                    class="job-description"
+                                    id="experience_description-1"
+                                    type="text"
+                                    name="experience_description"
+                                    placeholder="Description"
+                                    required
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                        </div>
+                      </ul>
                     </div>
                   </div>
-                  <hr />
-                </div>
+                </section>
                 <input
                   type="button"
                   name="next"
@@ -409,37 +437,68 @@
                 />
               </fieldset>
               <fieldset id="f4">
-                <div class="form-card" id="skill-form">
-                  <div id="skill-row">
-                    <div class="row">
-                      <div class="col-md-6">
-                        <label class="fieldlabels">Skills: </label>
-                        <input
-                          class="skill-title"
-                          id="skill_detail-1"
-                          type="text"
-                          name="skill"
-                          placeholder="Skills"
-                        />
-                      </div>
-                      <div class="col-md-6">
-                        <label class="fieldlabels">Level: *</label>
-                        <select
-                          class="skill-level"
-                          name="skill-level"
-                          placeholder="skill-level"
-                          id="skill_level-1"
-                          required
-                        >
-                          <option value="Beginner">Beginner</option>
-                          <option value="Intermediate">Intermediate</option>
-                          <option value="Advance">Advance</option>
-                        </select>
-                      </div>
+                <section id="faq" class="faq">
+                  <div class="container">
+                    <div class="faq-list">
+                      <ul style="width: 600px">
+                        <div class="form-card" id="skill-form">
+                          <li data-aos="fade-up" id="skill-1">
+                            <a
+                              data-toggle="collapse"
+                              class="collapse"
+                              id="skill-href-1"
+                              href="#skill-list-1"
+                              style="color: #673ab7"
+                              >Skill 1
+
+                              <i class="bx bx-chevron-down icon-show"></i
+                              ><i class="bx bx-chevron-up icon-close"></i
+                            ></a>
+
+                            <div
+                              id="skill-list-1"
+                              class="collapse show"
+                              data-parent=".faq-list"
+                            >
+                              <br />
+
+                              <div id="skill-row">
+                                <div class="row">
+                                  <div class="col-md-6">
+                                    <label class="fieldlabels">Skills: </label>
+                                    <input
+                                      class="skill-title"
+                                      id="skill_detail-1"
+                                      type="text"
+                                      name="skill"
+                                      placeholder="Skills"
+                                    />
+                                  </div>
+                                  <div class="col-md-6">
+                                    <label class="fieldlabels">Level: *</label>
+                                    <select
+                                      class="skill-level"
+                                      name="skill-level"
+                                      placeholder="skill-level"
+                                      id="skill_level-1"
+                                      required
+                                    >
+                                      <option value="Beginner">Beginner</option>
+                                      <option value="Intermediate">
+                                        Intermediate
+                                      </option>
+                                      <option value="Advance">Advance</option>
+                                    </select>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                        </div>
+                      </ul>
                     </div>
                   </div>
-                  <hr />
-                </div>
+                </section>
                 <input
                   id="submitBtn"
                   type="button"
@@ -522,30 +581,47 @@
   var element_id = "";
   $("body").bind("click keypress", function () {
     var store = null;
-    element_id = document.activeElement.id;
+    element_id = document.activeElement.id ? document.activeElement.id : 1;
     var store = $("#" + element_id + " :selected").text();
-    console.log(store);
     if (store) {
       iframe.contentWindow.document.getElementById(element_id).innerHTML =
         store;
     }
 
     var elmnt = document.getElementById(element_id);
-    elmnt.onkeyup = function () {
-      iframe.contentWindow.document.getElementById(element_id).innerHTML =
-        elmnt.value;
-    };
+    if (elmnt) {
+      elmnt.onkeyup = function () {
+        iframe.contentWindow.document.getElementById(element_id).innerHTML =
+          elmnt.value;
+      };
+    }
   });
   //
 
-  function myFunctionElt (elt) {
-    id = elt.id.split('-').at(-1);
-    $("#education-"+id).remove();   
-    $("#template1").contents().find("#education-"+id).remove();  
-    
- }
-
-
+  function delete_education(elt) {
+    id = elt.id.split("-").at(-1);
+    $("#education-" + id).remove();
+    $("#template1")
+      .contents()
+      .find("#education-" + id)
+      .remove();
+  }
+  function delete_job(elt) {
+    id = elt.id.split("-").at(-1);
+    $("#job-" + id).remove();
+    $("#template1")
+      .contents()
+      .find("#job-" + id)
+      .remove();
+  }
+  function delete_skill(elt) {
+    id = elt.id.split("-").at(-1);
+    $("#skill-" + id).remove();
+    $("#template1")
+      .contents()
+      .find("#skill-" + id)
+      .remove();
+  }
 </script>
 
 {% endblock js %}

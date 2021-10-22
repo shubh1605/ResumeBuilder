@@ -54,6 +54,7 @@ def forms(request):
         return HttpResponse(json.dumps(ctx), content_type='application/json')
 
     context = {
-        'resume_template': 'resume_templates/template1.html'
+        'resume_template': 'resume_templates/template1.html',
+        'user' : request.user,
     }
     return render(request, 'resume/forms.html')

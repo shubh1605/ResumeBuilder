@@ -37,8 +37,8 @@
         <div id="hd">
           <div class="yui-gc">
             <div class="yui-u first">
-              <h1 id="first_name">Harshit</h1>
-              <h1 id="last_name">Jain</h1>
+              <h1 id="first_name">{{user.first_name}}</h1>
+              <h1 id="last_name">{{user.last_name}}</h1>
               <h2 id="profession">Web Designer, Director</h2>
             </div>
 
@@ -49,8 +49,15 @@
                   <a href="mailto:name@yourdomain.com" id="email"
                     >name@yourdomain.com</a
                   >
+                  <br />
+                  <a href="" id="github">Github Link</a>
+                  <br />
+                  <a href="" id="linkedin">LinkedIn Link</a>
                 </h3>
+                <br>
                 <h3 id="contact">(313) - 867-5309</h3>
+                <br />
+                <h3 id="address">78/A, Bronx House, Houston</h3>
               </div>
               <!--// .contact-info -->
             </div>
@@ -82,9 +89,13 @@
                 </div>
                 <div class="yui-u" id="yui-u">
                   <div id="addnewskill">
-                    <div class="talent" id="single-skill">
-                      <h2 id="skill_detail-1" class="skill-detail">Django</h2>
-                      <p id="skill_level-1" class="skill-level">Intermediate</p>
+                    <div id="skill-1">
+                      <div class="talent" id="single-skill">
+                        <h2 id="skill_detail-1" class="skill-detail">Django</h2>
+                        <p id="skill_level-1" class="skill-level">
+                          Intermediate
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -99,19 +110,20 @@
 
                 <div class="yui-u" id="yui-u-1">
                   <div id="addnewjob">
-                    <div class="job" id="single-job">
-                      <h2 id="employer-1">Facebook</h2>
-                      <h3 id="job_title-1">Senior Interface Designer</h3>
-                      <h4 id="start_date-1">2005</h4>
-                      -
-                      <h4 id="end_date-1">2007</h4>
-                      <p id="experience_description-1">
-                        Intrinsicly enable optimal core competencies through
-                        corporate relationships. Phosfluorescently implement
-                        worldwide vortals and client-focused imperatives.
-                        Conveniently initiate virtual paradigms and top-line
-                        convergence.
-                      </p>
+                    <div id="job-1">
+                      <div class="job" id="single-job">
+                        <h2 id="employer-1">Facebook</h2>
+                        <h3 id="job_title-1">Senior Interface Designer</h3>
+                        <h4 > <span id="start_date-1">2005 </span> to
+                        <span id="end_date-1">2007</span></h4>
+                        <p id="experience_description-1">
+                          Intrinsicly enable optimal core competencies through
+                          corporate relationships. Phosfluorescently implement
+                          worldwide vortals and client-focused imperatives.
+                          Conveniently initiate virtual paradigms and top-line
+                          convergence.
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -125,19 +137,19 @@
                 </div>
                 <div class="yui-u" id="yui-u-2">
                   <div id="addneweducation">
-                    <div id="education-1" >
-                    <h2 id="degree-1">HSC</h2>
-                    <h4 id="passing_year-1" style="float: right">2021</h4>
-                    <h3 id="university-1">
-                      Indiana University - Bloomington, Indiana
-                    </h3>
-                    <span style="display: inline">
-                      <h3 id="branch-1">Dual Major, Economics and English</h3>
-                      <strong id="result-1">4.0 GPA</strong>
-                    </span>
-                    <br />
-                    <hr />
-                  </div>
+                    <div id="education-1">
+                      <h2 id="degree-1">HSC</h2>
+                      <h4 id="passing_year-1" style="float: right">2021</h4>
+                      <h3 id="university-1">
+                        Indiana University - Bloomington, Indiana
+                      </h3>
+                      <span style="display: inline">
+                        <h3 id="branch-1">Dual Major, Economics and English</h3>
+                        <strong id="result-1">4.0 GPA</strong>
+                      </span>
+                      <br />
+                      <hr />
+                    </div>
                   </div>
                 </div>
               </div>
