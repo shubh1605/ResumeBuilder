@@ -16,7 +16,7 @@
 
 <div class="container">
     <div class="row py-5 mt-4 align-items-center">
-        <!-- For Demo Purpose -->
+     
         <div class="col-md-5 pr-lg-5 mb-5 mb-md-0">
             <img src="{% static 'user/images/login.svg' %}" alt="" class="img-fluid mb-3 d-none d-md-block">
             <h1>Create an Account</h1>
@@ -25,91 +25,43 @@
         <div class="col-md-7 col-lg-6 ml-auto">
             <form method="POST">
                 {% csrf_token %}    
-                <div class="row">
-                    
-                    <!-- First Name -->
-                   <div class="input-group col-lg-6 mb-4">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text bg-white px-4 border-md border-right-0">
-                                <i class="fa fa-user text-muted"></i>
-                            </span>
+                    {% comment %} {{form_u|crispy}} {% endcomment %}
+                    <div class="form-row">
+                        <div class="form-group col-md-12 mb-0">
+                        {{ form_u.username|as_crispy_field }}
                         </div>
-                        {{ form_u.first_name}}
+                        <div class="form-group col-md-12 mb-0">
+                        {{ form_u.email|as_crispy_field }}
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6 mb-0">
+                        {{ form_u.first_name|as_crispy_field }}
+                        </div>
+                        <div class="form-group col-md-6 mb-0">
+                        {{ form_u.last_name|as_crispy_field }}
+                        </div>
                     </div>
 
-                    <!-- Last Name -->
-                    <div class="input-group col-lg-6 mb-4">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text bg-white px-4 border-md border-right-0">
-                                <i class="fa fa-user text-muted"></i>
-                            </span>
+                    <div class="form-row">
+                        <div class="form-group col-md-6 mb-0">
+                        {{ form_u.phone_number|as_crispy_field }}
                         </div>
-                        {{ form_u.last_name }}
-                    </div> 
-
-                    <!-- Email Address -->
-                    <div class="input-group col-lg-12 mb-4">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text bg-white px-4 border-md border-right-0">
-                                <i class="fa fa-envelope text-muted"></i>
-                            </span>
+                        <div class="form-group col-md-6 mb-0">
+                        {{ form_u.job|as_crispy_field }}
                         </div>
-                        {{ form_u.email }}
                     </div>
 
-                    <!-- Phone Number -->
-                    <div class="input-group col-lg-12 mb-4">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text bg-white px-4 border-md border-right-0">
-                                <i class="fa fa-phone-square text-muted"></i>
-                            </span>
+                    <div class="form-row">
+                        <div class="form-group col-md-12 mb-0">
+                        {{ form_u.password1|as_crispy_field }}
                         </div>
-                        {{ form_u.phone_number }}
-                    </div>.
-
-
-                    <!-- Job -->
-                    <div class="input-group col-lg-12 mb-4">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text bg-white px-4 border-md border-right-0">
-                                <i class="fa fa-black-tie text-muted"></i>
-                            </span>
+                        <div class="form-group col-md-12 mb-0">
+                        {{ form_u.password2|as_crispy_field }}
                         </div>
-                       
-
-                        {{ form_u.job }}
                     </div>
 
-                    <!-- Username -->
-                    <div class="input-group col-lg-12 mb-4">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text bg-white px-4 border-md border-right-0">
-                                <i class="fa fa-envelope text-muted"></i>
-                            </span>
-                        </div>
-                        {{ form_u.username }}
-                    </div>
 
-                    <!-- Password -->
-                    <div class="input-group col-lg-6 mb-4">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text bg-white px-4 border-md border-right-0">
-                                <i class="fa fa-lock text-muted"></i>
-                            </span>
-                        </div>
-                        {{ form_u.password1 }}
-                    </div>
-
-                    <!-- Password Confirmation -->
-                    <div class="input-group col-lg-6 mb-4">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text bg-white px-4 border-md border-right-0">
-                                <i class="fa fa-lock text-muted"></i>
-                            </span>
-                        </div>
-                        {{ form_u.password2 }}
-                    </div>
-                    
                     <div class="form-group col-lg-12 mx-auto mb-0">
                         <button class="btn btn-primary btn-block py-2" type="submit">
                             <span class="font-weight-bold" >Create your account</span></button>

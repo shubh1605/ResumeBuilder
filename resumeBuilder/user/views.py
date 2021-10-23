@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .forms import UserRegisterationForm
 from django.contrib.auth.models import User
 from django.shortcuts import redirect
-from .models import Profile
+from django.contrib import messages
 
 def register(request):
     if request.method == 'POST':
@@ -12,7 +12,9 @@ def register(request):
             print("haha")
             form_u.save()
             # messages.success(request, f'Your account has been created! You are now able to log in')
-            return redirect('register')
+            messages.success(request,"Registered!!!!")
+            return redirect('login')
+       
     else:
         form_u = UserRegisterationForm()
     return render(request, 'user/register.html', {'form_u': form_u})

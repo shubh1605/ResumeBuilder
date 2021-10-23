@@ -19,7 +19,7 @@ $(document).ready(function () {
     current_fs_id = current_fs.attr("id");
 
     $("#" + current_fs_id + " input:required").each(function () {
-      if ($(this).val() === "") chk = 0;
+      if ($(this).val() === "") chk = 1;
     });
 
     if (chk == 1) {
