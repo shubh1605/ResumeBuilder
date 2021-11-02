@@ -76,7 +76,7 @@
           
 
           {% if user.is_authenticated %}
-            <li><a href="#about">Profile</a></li>
+            <li><a href="{% url 'profile' %}">Profile</a></li>
             <li><a href="{% url 'logout' %}">Logout</a></li>
           {% else %}
             <li><a href="{% url 'login' %}">Login</a></li>
@@ -88,10 +88,7 @@
 
     </div>
   </header><!-- End Header -->
-<br>
-<br>
-<br>
-<br>
+
 {% if messages %}
 {% for message in messages %}
 <div class="container-fluid p-0">

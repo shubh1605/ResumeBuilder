@@ -32,3 +32,18 @@ class UserRegisterationForm(UserCreationForm):
 		profile.job = self.cleaned_data.get('job')
 		profile.save()
 		return user
+
+
+class UserUpdateForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ['first_name', 'last_name', 'email']
+
+
+class ProfileUpdateForm(forms.ModelForm):
+    # phoneNumber = forms.CharField()
+    # job = forms.CharField()
+
+    class Meta:
+        model = Profile
+        fields = ['phoneNumber', 'job']
