@@ -22,13 +22,14 @@ def testing(request):
 def forms(request):
 
     if request.method == 'POST':
-        educations = json.loads(request.POST.get('education'))
-
-        jobs = json.loads(request.POST.get('job'))
-   
-        skills = json.loads(request.POST.get('skill'))
-       
-        info = json.loads(request.POST.get('info'))
+        try:
+            educations = json.loads(request.POST.get('education'))
+            jobs = json.loads(request.POST.get('job')) 
+            skills = json.loads(request.POST.get('skill'))      
+            info = json.loads(request.POST.get('info'))
+        except:
+            print('HEHEHEHEHEH')
+        # print(educations,jobs,skills,info)
         ctx = {}
         loggedUser = request.user
         resume = Resume(user=loggedUser, template="template 1")

@@ -24,8 +24,9 @@
     color: #9fa8b9;
 }
 .account-settings .about {
-    margin: 2rem 0 0 0;
+    margin: 0.5rem 0 0 0;
     text-align: center;
+    padding-top: 10px;
 }
 .account-settings .about h5 {
     margin: 0 0 15px 0;

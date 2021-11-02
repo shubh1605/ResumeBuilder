@@ -39,7 +39,7 @@
             <div class="yui-u first">
               <h1 id="first_name">{{user.first_name}}</h1>
               <h1 id="last_name">{{user.last_name}}</h1>
-              <h2 id="profession">Web Designer, Director</h2>
+              <h2 id="profession">{{user.profile.job}}</h2>
             </div>
 
             <div class="yui-u">
@@ -47,17 +47,17 @@
                 <!-- <h3><a id="pdf" href="#">Download PDF</a></h3> -->
                 <h3>
                   <a href="mailto:name@yourdomain.com" id="email"
-                    >name@yourdomain.com</a
+                    >{{user.email}}</a
                   >
                   <br />
-                  <a href="" id="github">Github Link</a>
+                  <a href="{{user.profile.github}}" id="github">{{user.profile.github}}</a>
                   <br />
-                  <a href="" id="linkedin">LinkedIn Link</a>
+                  <a href="{{user.profile.linked}}" id="linkedin">{{user.profile.linkedin}}</a>
                 </h3>
                 <br>
-                <h3 id="contact">(313) - 867-5309</h3>
+                <h3 id="contact">{{user.profile.phoneNumber}}</h3>
                 <br />
-                <h3 id="address">78/A, Bronx House, Houston</h3>
+                <h3 id="address">{{user.profile.address}}</h3>
               </div>
               <!--// .contact-info -->
             </div>
@@ -75,9 +75,7 @@
                 </div>
                 <div class="yui-u">
                   <p class="enlarge" id="about">
-                    Progressively evolve cross-platform ideas before impactful
-                    infomediaries. Energistically visualize tactical initiatives
-                    before cross-media catalysts for change.
+                    {{user.profile.about}}
                   </p>
                 </div>
               </div>

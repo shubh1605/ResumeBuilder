@@ -41,9 +41,6 @@ class UserUpdateForm(forms.ModelForm):
 
 
 class ProfileUpdateForm(forms.ModelForm):
-    # phoneNumber = forms.CharField()
-    # job = forms.CharField()
-
     class Meta:
         model = Profile
-        fields = ['phoneNumber', 'job']
+        fields = ['phoneNumber', 'job','about','github','linkedin','address']

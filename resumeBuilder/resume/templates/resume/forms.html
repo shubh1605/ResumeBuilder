@@ -89,6 +89,7 @@
                         type="email"
                         name="email"
                         placeholder="Email"
+                        value = "{{user.email}}"
                         required
                       />
                     </div>
@@ -100,6 +101,7 @@
                         type="text"
                         name="contact"
                         placeholder="Contact"
+                        value = "{{user.profile.phoneNumber}}"
                         required
                       />
                     </div>
@@ -114,6 +116,7 @@
                         type="text"
                         name="address"
                         placeholder="Address"
+                        value="{{user.profile.address}}"
                         required
                       />
                     </div>
@@ -128,6 +131,7 @@
                         type="text"
                         name="profession"
                         placeholder="Profession"
+                        value="{{user.profile.job}}"
                         required
                       />
                     </div>
@@ -141,6 +145,7 @@
                         id="github"
                         type="url"
                         name="github"
+                        value="{{user.profile.github}}"
                         placeholder="Github Link"
                       />
                     </div>
@@ -152,6 +157,7 @@
                         type="url"
                         name="linkedin"
                         placeholder="LinkedIn"
+                        value="{{user.profile.linkedin}}"
                       />
                     </div>
                   </div>
@@ -165,6 +171,7 @@
                         id="about"
                         name="about"
                         placeholder="About you"
+                        value="{{user.profile.about}}"
                       />
                     </div>
                   </div>
@@ -540,8 +547,11 @@
                   <div class="row justify-content-center">
                     <div class="col-7 text-center">
                       <h5 class="purple-text text-center">
-                        You Have Successfully Signed Up
+                        One final step.
+                        <br>
+                        Download your resume now!
                       </h5>
+                      <button onClick="handlePrint()" >Download</button>
                     </div>
                   </div>
                 </div>
@@ -579,6 +589,11 @@
 <script>
   var iframe = document.getElementById("template1");
   var element_id = "";
+  const handlePrint = () => {
+    iframe.contentWindow.focus();
+    iframe.contentWindow.print();   
+    event.preventDefault();  
+  }
   $("body").bind("click keypress", function () {
     var store = null;
     element_id = document.activeElement.id ? document.activeElement.id : 1;
