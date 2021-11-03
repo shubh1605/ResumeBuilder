@@ -1108,6 +1108,8 @@ section {
   background: #fff;
 }
 
+
+
 .team .member {
   text-align: center;
   margin-bottom: 80px;
@@ -1181,6 +1183,10 @@ section {
 .team .member .social i {
   font-size: 16px;
   margin: 0 2px;
+}
+
+.team-member {
+  height: 400px;
 }
 
 /*--------------------------------------------------------------
@@ -1492,7 +1498,7 @@ section {
   padding: 10px 12px;
 }
 
-.contact .php-email-form button[type="submit"] {
+.contact .php-email-form button[type="button"] {
   background: #1acc8d;
   border: 0;
   padding: 10px 30px;
@@ -1501,7 +1507,7 @@ section {
   border-radius: 50px;
 }
 
-.contact .php-email-form button[type="submit"]:hover {
+.contact .php-email-form button[type="button"]:hover {
   background: #34e5a6;
 }
 
@@ -1678,3 +1684,18 @@ section {
     margin: -20px 0 30px 0;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
