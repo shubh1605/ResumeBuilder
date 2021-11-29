@@ -10,9 +10,11 @@
   // Preloader
   $(window).on('load', function() {
     if ($('#preloader').length) {
-      $('#preloader').delay(100).fadeOut('slow', function() {
-        $(this).remove();
-      });
+      console.log("hee");
+      $('#preloader').remove();
+      // $('#preloader').delay(100).fadeOut('slow', function() {
+        
+      // });
     }
   });
 
@@ -149,29 +151,26 @@
     return false;
   });
 
-  // Initiate the venobox plugin
-  $(window).on('load', function() {
-    $('.venobox').venobox();
-  });
+  // $(window).on('load', function() {
+  //   $('.venobox').venobox();
+  // });
 
-  // jQuery counterUp
-  $('[data-toggle="counter-up"]').counterUp({
-    delay: 10,
-    time: 1000
-  });
+    // $('[data-toggle="counter-up"]').counterUp({
+    //   delay: 10,
+    //   time: 1000
+    // });
 
-  // Initiate venobox lightbox
-  $(document).ready(function() {
-    $('.venobox').venobox();
-  });
+  // $(document).ready(function() {
+  //   $('.venobox').venobox();
+  // });
 
   // Testimonials carousel (uses the Owl Carousel library)
-  $(".testimonials-carousel").owlCarousel({
-    autoplay: true,
-    dots: true,
-    loop: true,
-    items: 1
-  });
+  // $(".testimonials-carousel").owlCarousel({
+  //   autoplay: true,
+  //   dots: true,
+  //   loop: true,
+  //   items: 1
+  // });
 
   // Init AOS
   function aos_init() {

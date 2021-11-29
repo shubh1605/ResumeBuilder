@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 html {
@@ -154,20 +155,25 @@ p {
   font-weight: 400;
 }
 
-#progressbar #account:before {
-  font-family: FontAwesome;
-  content: "\f13e";
-}
 
-#progressbar #personal:before {
+
+#progressbar #personal-logo:before {
   font-family: FontAwesome;
   content: "\f007";
 }
-
-#progressbar #payment:before {
+#progressbar #education-logo:before {
   font-family: FontAwesome;
-  content: "\f030";
+  content: "\f19c";
 }
+#progressbar #experience-logo:before {
+  font-family: FontAwesome;
+  content: "\f0b1";
+}
+#progressbar #skills-logo:before {
+  font-family: FontAwesome;
+  content: "\f085";
+}
+
 
 #progressbar #confirm:before {
   font-family: FontAwesome;

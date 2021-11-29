@@ -24,16 +24,16 @@
       mb-2
     "
   >
-    <h2 id="heading">Sign Up Your User Account</h2>
+    <h2 id="heading">Fill Up Your Resume With RezyuME</h2>
     <p>Fill all form field to go to next step</p>
     <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
       <ul id="progressbar">
-        <li class="active" id="account">
+        <li class="active" id="personal-logo">
           <strong>Personal Information</strong>
         </li>
-        <li id="personal"><strong>Education</strong></li>
-        <li id="payment"><strong>Experience</strong></li>
-        <li id="confirm"><strong>Skills</strong></li>
+        <li id="education-logo"><strong>Education</strong></li>
+        <li id="experience-logo"><strong>Experience</strong></li>
+        <li id="skills-logo"><strong>Skills</strong></li>
         <li id="confirm"><strong>Finish</strong></li>
       </ul>
     </div>
@@ -562,7 +562,7 @@
       </div>
     </div>
   </div>
-  <div class="col-md-5" style="height: 800px">
+  <div class="col-md-5" style="height: 800px; overflow-y:hidden;">
     <iframe
       src="{% url 'testing' %}"
       id="template1"
@@ -571,10 +571,10 @@
       scrolling="yes"
       frameborder="2px"
       height="150%"
-      width="165%"
+      width="170%"
       style="
         -webkit-transform: scale(0.5);
-        margin-left: -350px;
+        margin-left: -250px;
         margin-top: -200px;
       "
     >
@@ -640,3 +640,4 @@
 </script>
 
 {% endblock js %}
+  

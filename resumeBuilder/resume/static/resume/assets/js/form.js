@@ -19,7 +19,7 @@ $(document).ready(function () {
     current_fs_id = current_fs.attr("id");
 
     $("#" + current_fs_id + " input:required").each(function () {
-      if ($(this).val() === "") chk = 1;
+      if ($(this).val() === "") chk = 0;
     });
 
     if (chk == 1) {
@@ -29,9 +29,9 @@ $(document).ready(function () {
         text: "Fill all the fields",
       });
     } else {
-      console.log($(this).parent());
+      // console.log($(this).parent());
       next_fs = $(this).parent().next();
-      console.log(next_fs);
+      // console.log(next_fs);
       
 
       //Add Class Active

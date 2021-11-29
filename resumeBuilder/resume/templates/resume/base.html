@@ -1,5 +1,9 @@
 {% load static %}
 {% url 'home' as home_url %}
+{% url 'profile' as profile_url %}
+{% url 'login' as login_url %}
+{% url 'logout' as logout_url %}
+{% url 'register' as register_url %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,7 +38,7 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
-
+  
   {% block styles %}
   {% endblock styles %}
 
@@ -47,42 +51,21 @@
     <div class="container d-flex align-items-center">
 
       <div class="logo mr-auto">
-        <h1 class="text-light"><a href="{% url 'home' %}"><span>rezyuME</span></a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+        <h1 class="text-light" style="overflow-y:hidden;"><a href="{% url 'home' %}"><span>rezyuME</span></a></h1>
       </div>
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
 
-          <li class="active"><a href="{% url 'home' %}">Home</a></li>
-          
-          
-          {% comment %} <li class="drop-down"><a href="">Drop Down</a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="drop-down"><a href="#">Drop Down 2</a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-              <li><a href="#">Drop Down 5</a></li>
-            </ul>
-          </li> {% endcomment %}
+          <li class="{% if request.path == home_url %} active {% endif %}"><a href="{% url 'home' %}">Home</a></li>
           
 
           {% if user.is_authenticated %}
-            <li><a href="{% url 'profile' %}">Profile</a></li>
-            <li><a href="{% url 'logout' %}">Logout</a></li>
+            <li class="{% if request.path == profile_url %} active {% endif %} "><a href="{% url 'profile' %}">Profile</a></li>
+            <li class="{% if request.path == logout_url %} active {% endif %}"><a href="{% url 'logout' %}">Logout</a></li>
           {% else %}
-            <li><a href="{% url 'login' %}">Login</a></li>
-             <li><a href="{% url 'register' %}">Register</a></li>
+            <li class="{% if request.path == login_url %} active {% endif %}"><a href="{% url 'login' %}">Login</a></li>
+             <li class="{% if request.path == register_url %} active {% endif %}"><a href="{% url 'register' %}">Register</a></li>
           {% endif %}
 
         </ul>
@@ -107,7 +90,9 @@
 
   {% block content %}
   {% endblock content %}
-
+  <br>
+  <br>
+  <br>
   
 
 
@@ -116,7 +101,7 @@
  
 
   <!-- ======= Footer ======= -->
-  <footer id="footer">
+  <footer id="footer" style="margin-top:100px;">
     
       <div class="copyright">
         &copy; Copyright <strong><span>HKS Group</span></strong>. All Rights Reserved
